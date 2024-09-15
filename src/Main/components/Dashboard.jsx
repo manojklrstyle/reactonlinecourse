@@ -211,7 +211,7 @@ const dashboardStyles = {
     textAlign: 'center',
   },
   
-  // Responsive Styles
+  /* Responsive Styles */
   '@media (max-width: 768px)': {
     row: {
       flexDirection: 'column',
