@@ -27,11 +27,11 @@ const UiUxCourse = () => {
 
           {/* Course Info */}
           <div className="course-info">
-            <h2>{course.title}</h2>
-            <h4>{course.platform}</h4>
-            <p>{course.description}</p>
+            <h2 className="course-title">{course.title}</h2>
+            <h4 className="course-platform">{course.platform}</h4>
+            <p className="course-description">{course.description}</p>
             <p><strong>Price:</strong> {course.price}</p>
-            <button className="btn btn-primary" onClick={addToCart}>Add to Cart</button>
+            <button className="button button-primary" onClick={addToCart}>Add to Cart</button>
           </div>
         </div>
 
@@ -59,11 +59,10 @@ const UiUxCourse = () => {
   );
 };
 
-
 const Card = ({ title, content }) => (
   <div className="card">
-    <h4>{title}</h4>
-    <p>{content}</p>
+    <h4 className="card-header">{title}</h4>
+    <p className="card-body">{content}</p>
   </div>
 );
 
