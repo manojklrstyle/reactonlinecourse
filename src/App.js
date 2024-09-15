@@ -27,26 +27,25 @@ const App = () => {
   return (
     <CartProvider>
       <div>
-        <Router>
-        
+        <Router basename="/reactonlinecourse"> {/* Updated with basename */}
           <Routes>
-            <Route path="/reactonlinecourse" element={<Login/>}></Route>
-            <Route path="/dashboard" element={<Dashboard/>}></Route>
-            <Route path="/contact" element={<Contact/>}></Route>
-            <Route path="/signup" element={<Signup/>}></Route>
-            <Route path="/landing" element={<Landing/>}></Route>
-            <Route path="/ourcourses" element={<OurCourses/>}></Route>
-            <Route path="/placements" element={<Placements/>}></Route>
-            <Route path="/uiuxdeveloper" element={<UiUxDeveloper />}></Route>
-            <Route path="/uiuxdeveloper/:id" element={<UiUxCourse/>}></Route>
-            <Route path="/datascience" element={<DataScience/>}></Route>
-            <Route path="/datascience/:id" element={<DataScienceCourse/>}></Route>
-            <Route path="/fullstack" element={<FullStack/>}></Route>
-            <Route path="/fullstack/:id" element={<FullStackCourse/>}></Route>
-            <Route path="/marketing" element={<Marketing/>}></Route>
-            <Route path="/marketing/:id" element={<MarketingCourse/>}></Route>
-            <Route path="/coursehighlights" element={<CourseHighlights/>}></Route>
-            <Route path="/cart" element={<Cart/>}></Route> {/* Add route for Cart */}
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/ourcourses" element={<OurCourses />} />
+            <Route path="/placements" element={<Placements />} />
+            <Route path="/uiuxdeveloper" element={<UiUxDeveloper />} />
+            <Route path="/uiuxdeveloper/:id" element={<UiUxCourse />} />
+            <Route path="/datascience" element={<DataScience />} />
+            <Route path="/datascience/:id" element={<DataScienceCourse />} />
+            <Route path="/fullstack" element={<FullStack />} />
+            <Route path="/fullstack/:id" element={<FullStackCourse />} />
+            <Route path="/marketing" element={<Marketing />} />
+            <Route path="/marketing/:id" element={<MarketingCourse />} />
+            <Route path="/coursehighlights" element={<CourseHighlights />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </Router>
       </div>
