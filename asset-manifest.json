@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/reactonlinecourse/static/css/main.15727761.css",
-    "main.js": "/reactonlinecourse/static/js/main.3a6def5b.js",
+    "main.js": "/reactonlinecourse/static/js/main.4e425526.js",
     "static/js/453.c931f3a9.chunk.js": "/reactonlinecourse/static/js/453.c931f3a9.chunk.js",
     "static/media/oc2.jpg": "/reactonlinecourse/static/media/oc2.83b775f674ca30a8b43f.jpg",
     "static/media/oc4.jpg": "/reactonlinecourse/static/media/oc4.f8df288ff289c4cace5c.jpg",
@@ -9,11 +9,11 @@
     "static/media/oc1.jpg": "/reactonlinecourse/static/media/oc1.ae84edf6a44d55d27240.jpg",
     "index.html": "/reactonlinecourse/index.html",
     "main.15727761.css.map": "/reactonlinecourse/static/css/main.15727761.css.map",
-    "main.3a6def5b.js.map": "/reactonlinecourse/static/js/main.3a6def5b.js.map",
+    "main.4e425526.js.map": "/reactonlinecourse/static/js/main.4e425526.js.map",
     "453.c931f3a9.chunk.js.map": "/reactonlinecourse/static/js/453.c931f3a9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.15727761.css",
-    "static/js/main.3a6def5b.js"
+    "static/js/main.4e425526.js"
   ]
 }
