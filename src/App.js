@@ -1,4 +1,4 @@
-// App.js
+
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -27,7 +27,7 @@ const App = () => {
   return (
     <CartProvider>
       <div>
-        <Router basename="/reactonlinecourse"> {/* Updated with basename */}
+        <Router basename="/reactonlinecourse"> 
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />

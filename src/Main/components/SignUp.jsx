@@ -5,7 +5,7 @@ import { WhatsApp, Facebook } from '@mui/icons-material';
 function Signup() {
   const handleSignup = (e) => {
     e.preventDefault();
-    window.location.href = '/landing';
+    window.location.href = '/reactonlinecourse';
   };
 
   return (
@@ -77,7 +77,7 @@ function Signup() {
               By clicking on Continue, I accept the Terms & Conditions, Privacy Policy & Refund Policy
             </Typography>
             <Typography variant="body2" sx={styles.login}>
-              Already have an account? <Link href="/">Login</Link>
+              Already have an account? <Link href="/reactonlinecourse/login ">Login</Link>
             </Typography>
           </Box>
         </Box>

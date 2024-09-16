@@ -49,7 +49,7 @@ const Navbar = () => {
 
         <div style={navbarStyles.rightSection}>
           <div style={navbarStyles.authContainer}>
-            <Link to="/" style={navbarStyles.linkButton}>
+            <Link to="/login" style={navbarStyles.linkButton}>
               <button style={navbarStyles.loginButton}>Log in</button>
             </Link>
             <Link to="/signup" style={navbarStyles.linkButton}>

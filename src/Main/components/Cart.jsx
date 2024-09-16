@@ -4,6 +4,7 @@ import { Navbar, Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { ShoppingCart, BookOpen } from 'lucide-react';
 import Navbar1 from './Navbar1';
 import { Link } from 'react-router-dom';
+import '../../App.css'; 
 
 const Cart = () => {
   const { cartItems, dispatch } = useContext(CartContext);
@@ -14,10 +15,10 @@ const Cart = () => {
 
   return (
     <>
-      <Navbar1/>
+      <Navbar1 />
       <Navbar bg="primary" variant="dark" className="mb-4">
         <Container>
-         
+          
         </Container>
       </Navbar>
       
@@ -36,8 +37,8 @@ const Cart = () => {
                     <h4>Your cart is empty</h4>
                     <p className="text-muted">Explore our courses and start learning today!</p>
                     
-                    <Link path='/ourcourses'>
-                        <Button variant="primary">Browse Courses</Button>
+                    <Link to='/ourcourses'>
+                      <Button variant="primary">Browse Courses</Button>
                     </Link>
                     
                   </div>
@@ -46,8 +47,12 @@ const Cart = () => {
                     <Card key={item.id} className="mb-3">
                       <Card.Body>
                         <Row>
-                          <Col xs={4} md={3}>
-                            <img src={item.image} alt={item.title} className="img-fluid rounded" />
+                          <Col xs={4} md={3} className="d-flex align-items-center">
+                            <img 
+                              src={item.image} 
+                              alt={item.title} 
+                              className="img-fluid rounded img-large" 
+                            />
                           </Col>
                           <Col xs={8} md={9}>
                             <h5>{item.title}</h5>
@@ -74,7 +79,7 @@ const Cart = () => {
                   <label htmlFor="promoCode" className="form-label">Promotional Code</label>
                   <div className="input-group">
                     <input type="text" className="form-control" id="promoCode" placeholder="Enter code" />
-                    <Button variant="outline-secondary" type="submit">Apply</Button>
+                    <Button variant="outline-secondary" type="button">Apply</Button>
                   </div>
                 </form>
                 <Card.Text>

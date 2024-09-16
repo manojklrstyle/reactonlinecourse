@@ -8,7 +8,7 @@ function Login() {
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log('Logged in with: ', email, password);
-    window.location.href = '/landing';
+    window.location.href = '/reactonlinecourse';
   };
 
   return (
@@ -63,7 +63,7 @@ function Login() {
               By SignIn, you accept our Terms of use, Privacy policy and Refund policy
             </Typography>
             <Typography variant="body2" sx={styles.signup}>
-              Don't have an account? <Link href="/signup">Sign up</Link>
+              Don't have an account? <Link href="/reactonlinecourse/signup">Sign up</Link>
             </Typography>
           </Box>
         </Box>

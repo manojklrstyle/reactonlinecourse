@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar } from 'react-bootstrap';
 import { FaBook, FaUniversity, FaUserGraduate } from 'react-icons/fa'; 
 import { Link } from 'react-router-dom'; 
+import dashImage from '../assets/dashboard/dash1.jpg'; // Imported dash1.jpg
 
 const Dashboard = () => {
   return (
@@ -44,7 +45,7 @@ const Dashboard = () => {
           {/* Right Card with Image */}
           <div style={dashboardStyles.rightCard}>
             <img 
-              src="/assets/dashboard/dash1.jpg" 
+              src={dashImage} // Updated to use imported image
               alt="Dashboard" 
               style={dashboardStyles.image} 
             />
@@ -211,29 +212,41 @@ const dashboardStyles = {
     textAlign: 'center',
   },
   
+  
+
   /* Responsive Styles */
   '@media (max-width: 768px)': {
+    container: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '10px',
+    },
     row: {
       flexDirection: 'column',
+      alignItems: 'center', // Center content within row
+      width: '100%',
     },
     leftCard: {
       marginRight: '0',
       marginBottom: '20px',
+      padding: '20px', // Adjust padding for mobile
     },
     rightCard: {
-      height: '300px', 
+      height: '300px',
     },
     buttonContainer: {
+      display: 'flex',
       flexDirection: 'column',
-      gap: '50px', 
+      gap: '20px', // Increase gap between buttons
     },
     primaryButton: {
-      padding: '10px 20px', 
-      fontSize: '14px', 
+      padding: '10px 20px',
+      fontSize: '14px',
     },
     secondaryButton: {
-      padding: '10px 20px', 
-      fontSize: '14px', 
+      padding: '10px 20px',
+      fontSize: '14px',
     },
   },
 };
