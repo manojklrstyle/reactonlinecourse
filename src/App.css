@@ -361,7 +361,7 @@
 }
 
 /* UiUxCourse and for all courses dynamic components */
-/* UiUxCourse and for all courses dynamic components */
+
 .course-container {
   padding: 20px;
 }
@@ -380,7 +380,7 @@
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
-  transition: none; /* Remove transition for hover effect */
+  transition: none;
 }
 
 .course-info {
@@ -413,14 +413,13 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  transition: none; /* Remove transition for hover effect */
+  transition: none;
 }
 
 .enroll-button:hover {
-  background-color: #9251F3; /* No change on hover */
+  background-color: #9251F3;
 }
 
-/* Common styles for buttons */
 .button {
   display: inline-block;
   padding: 10px 20px;
@@ -429,7 +428,7 @@
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-  transition: none; /* Remove transition for hover effect */
+  transition: none;
 }
 
 .button-primary {
@@ -439,7 +438,7 @@
 }
 
 .button-primary:hover {
-  background-color: #9251F3; /* No change on hover */
+  background-color: #9251F3;
 }
 
 .button-secondary {
@@ -449,22 +448,21 @@
 }
 
 .button-secondary:hover {
-  background-color: #fff; /* No change on hover */
-  color: #9251F3; /* No change on hover */
+  background-color: #fff;
+  color: #9251F3;
 }
 
-/* For card components */
 .card {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 15px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
-  transition: none; /* Remove transition for hover effect */
+  transition: none;
 }
 
 .card:hover {
-  transform: none; /* No scale or transformation on hover */
+  transform: none;
 }
 
 .card-header {
@@ -478,7 +476,6 @@
   color: #555;
 }
 
-/* Additional styles for layout adjustments */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -497,7 +494,6 @@
   padding: 10px;
 }
 
-/* Utility classes */
 .text-center {
   text-align: center;
 }
@@ -534,7 +530,6 @@
   padding: 2rem;
 }
 
-/* Responsive Styles for Additional Components */
 @media (max-width: 992px) {
   .row {
     flex-direction: column;
@@ -553,5 +548,19 @@
   .button {
     font-size: 14px;
     padding: 8px 16px;
+  }
+
+  .course-grid {
+    flex-direction: column;
+  }
+
+  .course-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .course-info {
+    margin-top: 20px;
   }
 }
