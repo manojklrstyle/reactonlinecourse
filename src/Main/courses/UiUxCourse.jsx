@@ -9,7 +9,7 @@ import '../../App.css';
 const UiUxCourse = () => {
   let { id } = useParams();
   const course = uiuxData.find((item) => item.id === id);
-  const { dispatch } = useContext(CartContext); 
+  const { dispatch } = useContext(CartContext);  
 
   const addToCart = () => {
     dispatch({ type: 'ADD_TO_CART', payload: course });
