@@ -41,7 +41,7 @@ const Navbar = () => {
               placeholder="Courses"
               aria-label="Search"
             />
-            <button style={navbarStyles.searchButton} type="submit">
+            <button style={navbarStyles.searchButton} type="button">
               Search
             </button>
           </form>

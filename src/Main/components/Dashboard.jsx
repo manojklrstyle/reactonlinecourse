@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar } from 'react-bootstrap';
 import { FaBook, FaUniversity, FaUserGraduate } from 'react-icons/fa'; 
 import { Link } from 'react-router-dom'; 
-import dashImage from '../assets/dashboard/dash1.jpg'; // Imported dash1.jpg
+import dashImage from '../assets/dashboard/dash1.jpg'; 
 
 const Dashboard = () => {
   return (
@@ -45,7 +45,7 @@ const Dashboard = () => {
           {/* Right Card with Image */}
           <div style={dashboardStyles.rightCard}>
             <img 
-              src={dashImage} // Updated to use imported image
+              src={dashImage} 
               alt="Dashboard" 
               style={dashboardStyles.image} 
             />
@@ -224,13 +224,13 @@ const dashboardStyles = {
     },
     row: {
       flexDirection: 'column',
-      alignItems: 'center', // Center content within row
+      alignItems: 'center', 
       width: '100%',
     },
     leftCard: {
       marginRight: '0',
       marginBottom: '20px',
-      padding: '20px', // Adjust padding for mobile
+      padding: '20px', 
     },
     rightCard: {
       height: '300px',
@@ -238,7 +238,7 @@ const dashboardStyles = {
     buttonContainer: {
       display: 'flex',
       flexDirection: 'column',
-      gap: '20px', // Increase gap between buttons
+      gap: '20px', 
     },
     primaryButton: {
       padding: '10px 20px',
