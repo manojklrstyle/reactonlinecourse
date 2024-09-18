@@ -109,6 +109,7 @@
 @media (max-width: 768px) {
   .our-courses-container {
     flex-direction: column;
+    margin-top: 0px;
   }
 
   .sidebar {
@@ -337,12 +338,14 @@
 @media (max-width: 768px) {
   .uiux-container {
     flex-direction: column;
+    margin-top: 0%;
+    
   }
 
   .sidebar {
     width: 100%;
     height: auto;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
     position: relative;
     display: block;

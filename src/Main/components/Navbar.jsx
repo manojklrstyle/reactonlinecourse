@@ -1,10 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
+import { CartContext } from '../../context/CartContext';
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const sidebarRef = useRef(null);
+  const { cartItems } = useContext(CartContext); 
 
   const toggleSidebar = () => {
     setSidebarOpen(prevState => !prevState);
@@ -56,7 +59,13 @@ const Navbar = () => {
               <button style={navbarStyles.signupButton}>Join for Free</button>
             </Link>
             <Link to="/cart" style={navbarStyles.linkButton}>
-              <ShoppingCartIcon style={navbarStyles.cartIcon} />
+              <Badge
+                badgeContent={cartItems.length}
+                color="error" // Red color
+                style={{ margin: '0 10px' }}
+              >
+                <ShoppingCartIcon style={navbarStyles.cartIcon} />
+              </Badge>
             </Link>
           </div>
         </div>
@@ -88,6 +97,9 @@ const Navbar = () => {
     </nav>
   );
 };
+
+
+
 
 const navbarStyles = {
   navbar: {

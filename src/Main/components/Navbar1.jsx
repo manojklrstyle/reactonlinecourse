@@ -1,10 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
+import { CartContext } from '../../context/CartContext';
 
 const Navbar1 = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const sidebarRef = useRef(null);
+  const { cartItems } = useContext(CartContext); 
 
   const toggleSidebar = () => {
     setSidebarOpen(prevState => !prevState);
@@ -38,7 +41,7 @@ const Navbar1 = () => {
             <input
               style={navbarStyles.searchInput}
               type="search"
-              placeholder="Search Courses"
+              placeholder="Courses"
               aria-label="Search"
             />
             <button style={navbarStyles.searchButton} type="button">
@@ -49,14 +52,20 @@ const Navbar1 = () => {
 
         <div style={navbarStyles.rightSection}>
           <div style={navbarStyles.authContainer}>
-            <Link to="/" style={navbarStyles.linkButton}>
+            <Link to="/login" style={navbarStyles.linkButton}>
               <button style={navbarStyles.loginButton}>Log in</button>
             </Link>
             <Link to="/signup" style={navbarStyles.linkButton}>
               <button style={navbarStyles.signupButton}>Join for Free</button>
             </Link>
             <Link to="/cart" style={navbarStyles.linkButton}>
-              <ShoppingCartIcon style={navbarStyles.cartIcon} />
+              <Badge
+                badgeContent={cartItems.length}
+                color="error" 
+                style={{ margin: '0 10px' }}
+              >
+                <ShoppingCartIcon style={navbarStyles.cartIcon} />
+              </Badge>
             </Link>
           </div>
         </div>
@@ -88,6 +97,10 @@ const Navbar1 = () => {
     </nav>
   );
 };
+
+
+
+
 
 const navbarStyles = {
   navbar: {
@@ -126,6 +139,7 @@ const navbarStyles = {
     color: '#0056D2',
     textDecoration: 'none',
     marginLeft: '15px',
+    marginRight:'15px',
   },
   searchForm: {
     display: 'flex',
