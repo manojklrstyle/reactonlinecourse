@@ -1,37 +1,24 @@
-
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useState } from 'react';
 
 const initialState = {
   cartItems: [],
 };
 
-
-const cartReducer = (state, action) => {
-  switch (action.type) {
-    case 'ADD_TO_CART':
-      return {
-        ...state,
-        cartItems: [...state.cartItems, action.payload],
-      };
-    case 'REMOVE_FROM_CART':
-      return {
-        ...state,
-        cartItems: state.cartItems.filter((item) => item.id !== action.payload.id),
-      };
-    default:
-      return state;
-  }
-};
-
-
 export const CartContext = createContext();
 
-
 export const CartProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [cartItems, setCartItems] = useState(initialState.cartItems);
+
+  const addToCart = (item) => {
+    setCartItems((prevItems) => [...prevItems, item]);
+  };
+
+  const removeFromCart = (item) => {
+    setCartItems((prevItems) => prevItems.filter((cartItem) => cartItem.id !== item.id));
+  };
 
   return (
-    <CartContext.Provider value={{ cartItems: state.cartItems, dispatch }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

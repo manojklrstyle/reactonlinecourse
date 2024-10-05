@@ -9,10 +9,10 @@ import '../../App.css';
 const FullStackCourse = () => {
   let { id } = useParams();
   const course = fsData.find((item) => item.id === id);
-  const { dispatch } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext); 
 
-  const addToCart = () => {
-    dispatch({ type: 'ADD_TO_CART', payload: course });
+  const handleAddToCart = () => {
+    addToCart(course); 
   };
 
   return (
@@ -28,7 +28,9 @@ const FullStackCourse = () => {
             <h4 className="course-platform">{course.platform}</h4>
             <p className="course-description">{course.description}</p>
             <p><strong>Price:</strong> {course.price}</p>
-            <button className="button button-primary" style={{ marginTop: '20px' }} onClick={addToCart}>Add to Cart</button>
+            <button className="button button-primary" style={{ marginTop: '20px' }} onClick={handleAddToCart}>
+              Add to Cart
+            </button>
           </div>
         </div>
         <div className="additional-cards">

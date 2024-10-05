@@ -3,17 +3,13 @@ import { uiuxData } from '../data/uiuxData';
 import { useParams } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../components/Navbar';
-import { CartContext } from '../../context/CartContext'; 
-import '../../App.css'; 
+import { CartContext } from '../../context/CartContext';
+import '../../App.css';
 
 const UiUxCourse = () => {
   let { id } = useParams();
   const course = uiuxData.find((item) => item.id === id);
-  const { dispatch } = useContext(CartContext);  
-
-  const addToCart = () => {
-    dispatch({ type: 'ADD_TO_CART', payload: course });
-  };
+  const { addToCart } = useContext(CartContext);
 
   return (
     <>
@@ -30,8 +26,12 @@ const UiUxCourse = () => {
             <h2 className="course-title">{course.title}</h2>
             <h4 className="course-platform">{course.platform}</h4>
             <p className="course-description">{course.description}</p>
-            <p><strong>Price:</strong> {course.price}</p>
-            <button className="button button-primary" onClick={addToCart}>Add to Cart</button>
+            <p>
+              <strong>Price:</strong> {course.price}
+            </p>
+            <button className="button button-primary" onClick={() => addToCart(course)}>
+              Add to Cart
+            </button>
           </div>
         </div>
 

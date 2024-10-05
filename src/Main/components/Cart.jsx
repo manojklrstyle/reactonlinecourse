@@ -4,22 +4,16 @@ import { Navbar, Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { ShoppingCart, BookOpen } from 'lucide-react';
 import Navbar1 from './Navbar1';
 import { Link } from 'react-router-dom';
-import '../../App.css'; 
+import '../../App.css';
 
 const Cart = () => {
-  const { cartItems, dispatch } = useContext(CartContext);
-
-  const handleRemove = (item) => {
-    dispatch({ type: 'REMOVE_FROM_CART', payload: item });
-  };
+  const { cartItems, removeFromCart } = useContext(CartContext);
 
   return (
     <>
       <Navbar1 />
       <Navbar bg="primary" variant="dark" className="mb-4">
-        <Container>
-          
-        </Container>
+        <Container></Container>
       </Navbar>
       
       <Container fluid className="p-4">
@@ -36,11 +30,9 @@ const Cart = () => {
                     <BookOpen size={64} className="text-muted mb-3" />
                     <h4>Your cart is empty</h4>
                     <p className="text-muted">Explore our courses and start learning today!</p>
-                    
-                    <Link to='/ourcourses'>
+                    <Link to="/ourcourses">
                       <Button variant="primary">Browse Courses</Button>
                     </Link>
-                    
                   </div>
                 ) : (
                   cartItems.map((item) => (
@@ -48,17 +40,21 @@ const Cart = () => {
                       <Card.Body>
                         <Row>
                           <Col xs={4} md={3} className="d-flex align-items-center">
-                            <img 
-                              src={item.image} 
-                              alt={item.title} 
-                              className="img-fluid rounded img-large" 
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="img-fluid rounded img-large"
                             />
                           </Col>
                           <Col xs={8} md={9}>
                             <h5>{item.title}</h5>
                             <p className="text-muted">{item.platform}</p>
                             <p className="font-weight-bold">Price: {item.price}</p>
-                            <Button variant="outline-danger" size="sm" onClick={() => handleRemove(item)}>
+                            <Button
+                              variant="outline-danger"
+                              size="sm"
+                              onClick={() => removeFromCart(item)}
+                            >
                               Remove
                             </Button>
                           </Col>
@@ -74,18 +70,29 @@ const Cart = () => {
             <Card>
               <Card.Body>
                 <Card.Title>Order Summary</Card.Title>
-                <p>The price and availability of items are subject to change. The shopping cart is a temporary place to store a list of your items and reflects each item's most recent price.</p>
+                <p>The price and availability of items are subject to change...</p>
                 <form className="mb-3">
-                  <label htmlFor="promoCode" className="form-label">Promotional Code</label>
+                  <label htmlFor="promoCode" className="form-label">
+                    Promotional Code
+                  </label>
                   <div className="input-group">
                     <input type="text" className="form-control" id="promoCode" placeholder="Enter code" />
-                    <Button variant="outline-secondary" type="button">Apply</Button>
+                    <Button variant="outline-secondary" type="button">
+                      Apply
+                    </Button>
                   </div>
                 </form>
                 <Card.Text>
-                  <strong>Total: Rs{cartItems.reduce((sum, item) => sum + parseFloat(item.price.replace('$', '')), 0).toFixed(2)}</strong>
+                  <strong>
+                    Total: Rs
+                    {cartItems
+                      .reduce((sum, item) => sum + parseFloat(item.price.replace('$', '')), 0)
+                      .toFixed(2)}
+                  </strong>
                 </Card.Text>
-                <Button variant="primary" className="w-100">Proceed to Checkout</Button>
+                <Button variant="primary" className="w-100">
+                  Proceed to Checkout
+                </Button>
               </Card.Body>
             </Card>
             <Card className="mt-3">
